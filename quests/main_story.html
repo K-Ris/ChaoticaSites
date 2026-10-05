@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Main Story - Chaotica 4.0</title><style>
+:root { --bg: #17151d; --panel: #221f2b; --text: #e8e4f0; --muted: #a59fb5; --accent: #d98cff; --border: #3a3448; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, Segoe UI, sans-serif; }
+header { padding: 14px 20px; border-bottom: 1px solid var(--border); display: flex; gap: 18px; align-items: baseline; flex-wrap: wrap; }
+header a { color: var(--muted); text-decoration: none; } header a:hover { color: var(--accent); }
+header .brand { color: var(--accent); font-weight: 600; font-size: 18px; }
+main { padding: 16px 20px; }
+h1 { font-size: 22px; margin: 4px 0 4px; } .sub { color: var(--muted); margin: 0 0 14px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 14px; color: var(--text); text-decoration: none; }
+.card:hover { border-color: var(--accent); } .card b { display: block; margin-bottom: 4px; } .card span { color: var(--muted); font-size: 13px; }
+.viewer { overflow: auto; border: 1px solid var(--border); border-radius: 8px; background: #121017; max-height: 82vh; }
+.stage { position: relative; display: inline-block; transform-origin: 0 0; }
+.stage img { display: block; image-rendering: pixelated; }
+.spot { position: absolute; border-radius: 50%; cursor: help; }
+.spot:hover { outline: 2px solid var(--accent); }
+#tip { position: fixed; pointer-events: none; display: none; max-width: 360px; background: #0e0c12f2; border: 1px solid var(--accent);
+       border-radius: 6px; padding: 8px 10px; font-size: 13px; z-index: 10; white-space: pre-line; }
+#tip b { color: var(--accent); }
+.controls { margin: 0 0 10px; display: flex; gap: 8px; align-items: center; color: var(--muted); font-size: 13px; }
+.controls button { background: var(--panel); color: var(--text); border: 1px solid var(--border); border-radius: 5px; padding: 3px 10px; cursor: pointer; }
+</style></head>
+<body><header><span class="brand">Chaotica 4.0</span><a href="../index.html">Overview</a><a href="../arcana/index.html">Arcana tree</a><a href="../quests/index.html">Quests</a><a href="../mods/index.html">Mods</a></header><main><h1>Main Story</h1><p class="sub">Overworld - Nether - End</p>
+<div class="controls"><button data-zoom="fit">Fit</button><button data-zoom="0.8">-</button><button data-zoom="1.25">+</button><span id="z">100%</span>
+<span>Hover a node for details.</span></div>
+<div class="viewer"><div class="stage" style="width:1330px;height:520px"><img src="main_story.png" width="1330" height="520" alt="Main Story"><div class="spot" style="left:55.5px;top:216.5px;width:69.0px;height:69.0px" data-tip="&lt;b&gt;A Chaotic Beginning&lt;/b&gt;
+&lt;i&gt;Stage: Normal&lt;/i&gt;
+
+This world grows harder in three stages: Normal (Overworld), Expert (Nether) and Master (End).
+
+Each dimension is sealed. Gather reagents from bosses, treasure, cooking, fishing, bounties and more to craft its key.
+
+Press K to open the Arcana skill tree.
+
+Tasks:
+- Checkmark"></div><div class="spot" style="left:159.0px;top:67.0px;width:46.0px;height:46.0px" data-tip="&lt;b&gt;Buzzing Detour&lt;/b&gt;
+(optional)
+
+Throw an ender pearl into a bee nest to visit the Bumblezone.
+
+Optional side dimension.
+
+Tasks:
+- Enter: the_bumblezone:the_bumblezone"></div><div class="spot" style="left:159.0px;top:147.5px;width:46.0px;height:46.0px" data-tip="&lt;b&gt;Fae Dust&lt;/b&gt;
+
+Combat: rare drop from witches
+Other: archaeology, breeding animals
+
+Sources are not implemented yet - use /give for testing.
+
+Tasks:
+- Item: 1x Fae Dust"></div><div class="spot" style="left:251.0px;top:147.5px;width:46.0px;height:46.0px" data-tip="&lt;b&gt;1x Twilight Crystal&lt;/b&gt;
+
+Tasks:
+- Item: 1x Twilight Crystal"></div><div class="spot" style="left:343.0px;top:147.5px;width:46.0px;height:46.0px" data-tip="&lt;b&gt;Into the Twilight&lt;/b&gt;
+
+Enter the Twilight Forest. Its early bosses guard reagents for the Nether key.
+
+Tasks:
+- Enter: twilightforest:twilight_forest"></div><div class="spot" style="left:251.0px;top:239.5px;width:46.0px;height:46.0px" data-tip="&lt;b&gt;1x Smoldering Ember&lt;/b&gt;
+
+Tasks:
+- Item: 1x Smoldering Ember"></div><div class="spot" style="left:389.0px;top:239.5px;width:46.0px;height:46.0px" data-tip="&lt;b&gt;Shadow Ash&lt;/b&gt;
+
+Combat: Twilight Lich, Knight Phantom
+Other: surviving an Undead Army, photography
+
+Sources are not implemented yet - use /give for testing.
+
+Tasks:
+- Item: 1x Shadow Ash"></div><div class="spot" style="left:251.0px;top:331.5px;width:46.0px;height:46.0px" data-tip="&lt;b&gt;Obsidian Heart&lt;/b&gt;
+
+Combat: Ferrous Wroughtnaut, Haunted Knight
+Other: Bountiful contracts, Hero of the Village
+
+Sources are not implemented yet - use /give for testing.
+
+Tasks:
+- Item: 1x Obsidian Heart"></div><div class="spot" style="left:481.0px;top:285.5px;width:46.0px;height:46.0px" data-tip="&lt;b&gt;Infernal Igniter&lt;/b&gt;
+
+Bind the three reagents to a flint and steel.
+
+Only the Infernal Igniter can light a Nether portal.
+
+Tasks:
+- Item: 1x Infernal Igniter"></div><div class="spot" style="left:573.0px;top:262.5px;width:92.0px;height:92.0px" data-tip="&lt;b&gt;minecraft:the_nether&lt;/b&gt;
+
+Tasks:
+- Enter: minecraft:the_nether"></div><div class="spot" style="left:711.0px;top:193.5px;width:46.0px;height:46.0px" data-tip="&lt;b&gt;Ghast Ether&lt;/b&gt;
+
+Combat: Ur-Ghast
+Other: lava fishing, fortress treasure
+
+Sources are not implemented yet - use /give for testing.
+
+Tasks:
+- Item: 1x Ghast Ether"></div><div class="spot" style="left:711.0px;top:285.5px;width:46.0px;height:46.0px" data-tip="&lt;b&gt;Frozen Starlight&lt;/b&gt;
+
+Combat: Snow Queen, Alpha Yeti
+Other: photography, cooking
+
+Sources are not implemented yet - use /give for testing.
+
+Tasks:
+- Item: 1x Frozen Starlight"></div><div class="spot" style="left:711.0px;top:377.5px;width:46.0px;height:46.0px" data-tip="&lt;b&gt;Skyward Feather&lt;/b&gt;
+
+Combat: Hydra
+Other: gliding, treasure balloons, breeding chickens
+
+Sources are not implemented yet - use /give for testing.
+
+Tasks:
+- Item: 1x Skyward Feather"></div><div class="spot" style="left:803.0px;top:285.5px;width:46.0px;height:46.0px" data-tip="&lt;b&gt;1x Celestial Vial&lt;/b&gt;
+
+Tasks:
+- Item: 1x Celestial Vial"></div><div class="spot" style="left:895.0px;top:285.5px;width:46.0px;height:46.0px" data-tip="&lt;b&gt;Into the Aether&lt;/b&gt;
+
+Enter the Aether. Its guardians hold some of the eyes needed for the End.
+
+Tasks:
+- Enter: aether:the_aether"></div><div class="spot" style="left:987.0px;top:285.5px;width:46.0px;height:46.0px" data-tip="&lt;b&gt;Eyes of the End&lt;/b&gt;
+
+Collect the eyes for the Ancient Portal.
+
+Placeholder - the eye sources are not designed yet.
+
+Tasks:
+- Checkmark"></div><div class="spot" style="left:1079.0px;top:262.5px;width:92.0px;height:92.0px" data-tip="&lt;b&gt;minecraft:the_end&lt;/b&gt;
+
+Tasks:
+- Enter: minecraft:the_end"></div><div class="spot" style="left:1205.5px;top:274.0px;width:69.0px;height:69.0px" data-tip="&lt;b&gt;Free the End&lt;/b&gt;
+
+Slay the Ender Dragon.
+
+Tasks:
+- Kill: 1x Ender Dragon"></div></div></div>
+<div id="tip"></div><script>
+const tip = document.getElementById('tip');
+document.querySelectorAll('.spot').forEach(s => {
+  s.addEventListener('mousemove', e => {
+    tip.innerHTML = s.dataset.tip; tip.style.display = 'block';
+    const x = Math.min(e.clientX + 14, window.innerWidth - tip.offsetWidth - 8);
+    const y = Math.min(e.clientY + 14, window.innerHeight - tip.offsetHeight - 8);
+    tip.style.left = x + 'px'; tip.style.top = y + 'px';
+  });
+  s.addEventListener('mouseleave', () => tip.style.display = 'none');
+});
+let zoom = 1;
+const stage = document.querySelector('.stage');
+function setZoom(z) { zoom = Math.max(0.25, Math.min(3, z)); stage.style.transform = `scale(${zoom})`;
+  stage.parentElement.style.setProperty('--z', zoom); document.getElementById('z').textContent = Math.round(zoom * 100) + '%'; }
+document.querySelectorAll('[data-zoom]').forEach(b => b.onclick = () => setZoom(b.dataset.zoom === 'fit'
+  ? stage.parentElement.clientWidth / stage.offsetWidth : zoom * parseFloat(b.dataset.zoom)));
+</script></main></body></html>

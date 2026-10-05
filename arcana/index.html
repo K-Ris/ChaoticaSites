@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arcana - Chaotica 4.0</title><style>
+:root { --bg: #17151d; --panel: #221f2b; --text: #e8e4f0; --muted: #a59fb5; --accent: #d98cff; --border: #3a3448; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, Segoe UI, sans-serif; }
+header { padding: 14px 20px; border-bottom: 1px solid var(--border); display: flex; gap: 18px; align-items: baseline; flex-wrap: wrap; }
+header a { color: var(--muted); text-decoration: none; } header a:hover { color: var(--accent); }
+header .brand { color: var(--accent); font-weight: 600; font-size: 18px; }
+main { padding: 16px 20px; }
+h1 { font-size: 22px; margin: 4px 0 4px; } .sub { color: var(--muted); margin: 0 0 14px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 14px; color: var(--text); text-decoration: none; }
+.card:hover { border-color: var(--accent); } .card b { display: block; margin-bottom: 4px; } .card span { color: var(--muted); font-size: 13px; }
+.viewer { overflow: auto; border: 1px solid var(--border); border-radius: 8px; background: #121017; max-height: 82vh; }
+.stage { position: relative; display: inline-block; transform-origin: 0 0; }
+.stage img { display: block; image-rendering: pixelated; }
+.spot { position: absolute; border-radius: 50%; cursor: help; }
+.spot:hover { outline: 2px solid var(--accent); }
+#tip { position: fixed; pointer-events: none; display: none; max-width: 360px; background: #0e0c12f2; border: 1px solid var(--accent);
+       border-radius: 6px; padding: 8px 10px; font-size: 13px; z-index: 10; white-space: pre-line; }
+#tip b { color: var(--accent); }
+.controls { margin: 0 0 10px; display: flex; gap: 8px; align-items: center; color: var(--muted); font-size: 13px; }
+.controls button { background: var(--panel); color: var(--text); border: 1px solid var(--border); border-radius: 5px; padding: 3px 10px; cursor: pointer; }
+</style></head>
+<body><header><span class="brand">Chaotica 4.0</span><a href="../index.html">Overview</a><a href="../arcana/index.html">Arcana tree</a><a href="../quests/index.html">Quests</a><a href="../mods/index.html">Mods</a></header><main><h1>Arcana skill tree</h1><p class="sub">189 nodes, 2 starting points. Unlock higher spell tiers per school. Side schools must be awakened first.</p>
+<div class="controls"><button data-zoom="fit">Fit</button><button data-zoom="0.8">-</button><button data-zoom="1.25">+</button><span id="z">100%</span>
+<span>Hover a node for details.</span></div>
+<div class="viewer"><div class="stage" style="width:2684px;height:2490px"><img src="arcana.png" width="2684" height="2490" alt="Arcana skill tree"><div class="spot" style="left:1377.0px;top:971.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Fire Uncommon&lt;/b&gt;
+Unlocks casting Uncommon (Tier 2) Fire spells.
+Cost: 2 points
+(starting node)"></div><div class="spot" style="left:1382.0px;top:912.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Fire Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1382.0px;top:848.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Fire Mastery&lt;/b&gt;
++10% Fire Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1377.0px;top:779.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Fire Rare&lt;/b&gt;
+Unlocks casting Rare (Tier 3) Fire spells.
+Cost: 3 points"></div><div class="spot" style="left:1382.0px;top:720.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Fire Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1382.0px;top:656.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Fire Mastery&lt;/b&gt;
++10% Fire Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1377.0px;top:587.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Fire Epic&lt;/b&gt;
+Unlocks casting Epic (Tier 4) Fire spells.
+Cost: 4 points"></div><div class="spot" style="left:1382.0px;top:528.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Fire Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1382.0px;top:464.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Fire Mastery&lt;/b&gt;
++10% Fire Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1377.0px;top:395.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Fire Legendary&lt;/b&gt;
+Unlocks casting Legendary (Tier 5) Fire spells.
+Cost: 5 points"></div><div class="spot" style="left:1382.0px;top:336.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Fire Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1382.0px;top:272.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Fire Mastery&lt;/b&gt;
++10% Fire Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1477.0px;top:1019.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Lightning Uncommon&lt;/b&gt;
+Unlocks casting Uncommon (Tier 2) Lightning spells.
+Cost: 2 points
+(starting node)"></div><div class="spot" style="left:1532.0px;top:984.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Lightning Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1582.0px;top:944.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Lightning Mastery&lt;/b&gt;
++10% Lightning Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1627.0px;top:899.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Lightning Rare&lt;/b&gt;
+Unlocks casting Rare (Tier 3) Lightning spells.
+Cost: 3 points"></div><div class="spot" style="left:1682.0px;top:864.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Lightning Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1732.0px;top:824.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Lightning Mastery&lt;/b&gt;
++10% Lightning Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1777.0px;top:779.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Lightning Epic&lt;/b&gt;
+Unlocks casting Epic (Tier 4) Lightning spells.
+Cost: 4 points"></div><div class="spot" style="left:1832.0px;top:744.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Lightning Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1882.0px;top:704.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Lightning Mastery&lt;/b&gt;
++10% Lightning Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1927.0px;top:661.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Lightning Legendary&lt;/b&gt;
+Unlocks casting Legendary (Tier 5) Lightning spells.
+Cost: 5 points"></div><div class="spot" style="left:1982.0px;top:626.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Lightning Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:2032.0px;top:586.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Lightning Mastery&lt;/b&gt;
++10% Lightning Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1713.0px;top:731.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Technomancy Awakening&lt;/b&gt;
+Unlocks casting Common (Tier 1) Technomancy spells.
+Cost: 1 point
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:1760.0px;top:688.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Technomancy Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:1800.0px;top:638.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Technomancy Mastery&lt;/b&gt;
++10% Technomancy Spell Power
+Cost: 1 point
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:1835.0px;top:583.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Technomancy Uncommon&lt;/b&gt;
+Unlocks casting Uncommon (Tier 2) Technomancy spells.
+Cost: 2 points
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:1882.0px;top:540.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Technomancy Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:1922.0px;top:490.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Technomancy Mastery&lt;/b&gt;
++10% Technomancy Spell Power
+Cost: 1 point
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:1957.0px;top:435.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Technomancy Rare&lt;/b&gt;
+Unlocks casting Rare (Tier 3) Technomancy spells.
+Cost: 3 points
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:2004.0px;top:390.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Technomancy Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:2044.0px;top:342.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Technomancy Mastery&lt;/b&gt;
++10% Technomancy Spell Power
+Cost: 1 point
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:2079.0px;top:287.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Technomancy Epic&lt;/b&gt;
+Unlocks casting Epic (Tier 4) Technomancy spells.
+Cost: 4 points
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:2126.0px;top:242.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Technomancy Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:2166.0px;top:194.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Technomancy Mastery&lt;/b&gt;
++10% Technomancy Spell Power
+Cost: 1 point
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:2201.0px;top:139.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Technomancy Legendary&lt;/b&gt;
+Unlocks casting Legendary (Tier 5) Technomancy spells.
+Cost: 5 points
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:2248.0px;top:94.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Technomancy Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:2288.0px;top:44.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Technomancy Mastery&lt;/b&gt;
++10% Technomancy Spell Power
+Cost: 1 point
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:1501.0px;top:1127.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Nature Uncommon&lt;/b&gt;
+Unlocks casting Uncommon (Tier 2) Nature spells.
+Cost: 2 points
+(starting node)"></div><div class="spot" style="left:1570.0px;top:1146.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Nature Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1632.0px;top:1160.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Nature Mastery&lt;/b&gt;
++10% Nature Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1689.0px;top:1171.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Nature Rare&lt;/b&gt;
+Unlocks casting Rare (Tier 3) Nature spells.
+Cost: 3 points"></div><div class="spot" style="left:1756.0px;top:1190.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Nature Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1818.0px;top:1204.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Nature Mastery&lt;/b&gt;
++10% Nature Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1877.0px;top:1213.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Nature Epic&lt;/b&gt;
+Unlocks casting Epic (Tier 4) Nature spells.
+Cost: 4 points"></div><div class="spot" style="left:1944.0px;top:1232.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Nature Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:2006.0px;top:1246.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Nature Mastery&lt;/b&gt;
++10% Nature Spell Power
+Cost: 1 point"></div><div class="spot" style="left:2063.0px;top:1255.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Nature Legendary&lt;/b&gt;
+Unlocks casting Legendary (Tier 5) Nature spells.
+Cost: 5 points"></div><div class="spot" style="left:2130.0px;top:1274.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Nature Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:2194.0px;top:1290.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Nature Mastery&lt;/b&gt;
++10% Nature Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1687.0px;top:1091.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Geo Awakening&lt;/b&gt;
+Unlocks casting Common (Tier 1) Geo spells.
+Cost: 1 point
+Requires: gtbcs_geomancy_plus"></div><div class="spot" style="left:1756.0px;top:1096.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Geo Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: gtbcs_geomancy_plus"></div><div class="spot" style="left:1820.0px;top:1098.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Geo Mastery&lt;/b&gt;
++10% Geo Spell Power
+Cost: 1 point
+Requires: gtbcs_geomancy_plus"></div><div class="spot" style="left:1879.0px;top:1093.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Geo Uncommon&lt;/b&gt;
+Unlocks casting Uncommon (Tier 2) Geo spells.
+Cost: 2 points
+Requires: gtbcs_geomancy_plus"></div><div class="spot" style="left:1948.0px;top:1100.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Geo Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: gtbcs_geomancy_plus"></div><div class="spot" style="left:2012.0px;top:1100.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Geo Mastery&lt;/b&gt;
++10% Geo Spell Power
+Cost: 1 point
+Requires: gtbcs_geomancy_plus"></div><div class="spot" style="left:2071.0px;top:1097.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Geo Rare&lt;/b&gt;
+Unlocks casting Rare (Tier 3) Geo spells.
+Cost: 3 points
+Requires: gtbcs_geomancy_plus"></div><div class="spot" style="left:2140.0px;top:1102.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Geo Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: gtbcs_geomancy_plus"></div><div class="spot" style="left:2204.0px;top:1104.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Geo Mastery&lt;/b&gt;
++10% Geo Spell Power
+Cost: 1 point
+Requires: gtbcs_geomancy_plus"></div><div class="spot" style="left:2263.0px;top:1099.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Geo Epic&lt;/b&gt;
+Unlocks casting Epic (Tier 4) Geo spells.
+Cost: 4 points
+Requires: gtbcs_geomancy_plus"></div><div class="spot" style="left:2332.0px;top:1106.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Geo Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: gtbcs_geomancy_plus"></div><div class="spot" style="left:2396.0px;top:1106.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Geo Mastery&lt;/b&gt;
++10% Geo Spell Power
+Cost: 1 point
+Requires: gtbcs_geomancy_plus"></div><div class="spot" style="left:2455.0px;top:1101.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Geo Legendary&lt;/b&gt;
+Unlocks casting Legendary (Tier 5) Geo spells.
+Cost: 5 points
+Requires: gtbcs_geomancy_plus"></div><div class="spot" style="left:2524.0px;top:1108.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Geo Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: gtbcs_geomancy_plus"></div><div class="spot" style="left:2588.0px;top:1108.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Geo Mastery&lt;/b&gt;
++10% Geo Spell Power
+Cost: 1 point
+Requires: gtbcs_geomancy_plus"></div><div class="spot" style="left:1433.0px;top:1215.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Holy Uncommon&lt;/b&gt;
+Unlocks casting Uncommon (Tier 2) Holy spells.
+Cost: 2 points
+(starting node)"></div><div class="spot" style="left:1466.0px;top:1276.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Holy Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1494.0px;top:1334.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Holy Mastery&lt;/b&gt;
++10% Holy Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1515.0px;top:1387.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Holy Rare&lt;/b&gt;
+Unlocks casting Rare (Tier 3) Holy spells.
+Cost: 3 points"></div><div class="spot" style="left:1548.0px;top:1450.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Holy Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1576.0px;top:1508.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Holy Mastery&lt;/b&gt;
++10% Holy Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1599.0px;top:1561.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Holy Epic&lt;/b&gt;
+Unlocks casting Epic (Tier 4) Holy spells.
+Cost: 4 points"></div><div class="spot" style="left:1632.0px;top:1622.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Holy Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1660.0px;top:1680.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Holy Mastery&lt;/b&gt;
++10% Holy Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1683.0px;top:1733.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Holy Legendary&lt;/b&gt;
+Unlocks casting Legendary (Tier 5) Holy spells.
+Cost: 5 points"></div><div class="spot" style="left:1716.0px;top:1796.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Holy Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1742.0px;top:1854.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Holy Mastery&lt;/b&gt;
++10% Holy Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1603.0px;top:1393.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Melodic Awakening&lt;/b&gt;
+Unlocks casting Common (Tier 1) Melodic spells.
+Cost: 1 point
+Requires: tunes_n_tomes"></div><div class="spot" style="left:1646.0px;top:1450.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Melodic Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: tunes_n_tomes"></div><div class="spot" style="left:1686.0px;top:1500.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Melodic Mastery&lt;/b&gt;
++10% Melodic Spell Power
+Cost: 1 point
+Requires: tunes_n_tomes"></div><div class="spot" style="left:1721.0px;top:1545.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Melodic Uncommon&lt;/b&gt;
+Unlocks casting Uncommon (Tier 2) Melodic spells.
+Cost: 2 points
+Requires: tunes_n_tomes"></div><div class="spot" style="left:1764.0px;top:1602.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Melodic Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: tunes_n_tomes"></div><div class="spot" style="left:1804.0px;top:1652.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Melodic Mastery&lt;/b&gt;
++10% Melodic Spell Power
+Cost: 1 point
+Requires: tunes_n_tomes"></div><div class="spot" style="left:1837.0px;top:1697.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Melodic Rare&lt;/b&gt;
+Unlocks casting Rare (Tier 3) Melodic spells.
+Cost: 3 points
+Requires: tunes_n_tomes"></div><div class="spot" style="left:1882.0px;top:1752.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Melodic Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: tunes_n_tomes"></div><div class="spot" style="left:1920.0px;top:1804.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Melodic Mastery&lt;/b&gt;
++10% Melodic Spell Power
+Cost: 1 point
+Requires: tunes_n_tomes"></div><div class="spot" style="left:1955.0px;top:1849.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Melodic Epic&lt;/b&gt;
+Unlocks casting Epic (Tier 4) Melodic spells.
+Cost: 4 points
+Requires: tunes_n_tomes"></div><div class="spot" style="left:2000.0px;top:1904.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Melodic Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: tunes_n_tomes"></div><div class="spot" style="left:2038.0px;top:1956.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Melodic Mastery&lt;/b&gt;
++10% Melodic Spell Power
+Cost: 1 point
+Requires: tunes_n_tomes"></div><div class="spot" style="left:2073.0px;top:2001.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Melodic Legendary&lt;/b&gt;
+Unlocks casting Legendary (Tier 5) Melodic spells.
+Cost: 5 points
+Requires: tunes_n_tomes"></div><div class="spot" style="left:2116.0px;top:2056.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Melodic Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: tunes_n_tomes"></div><div class="spot" style="left:2156.0px;top:2108.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Melodic Mastery&lt;/b&gt;
++10% Melodic Spell Power
+Cost: 1 point
+Requires: tunes_n_tomes"></div><div class="spot" style="left:1321.0px;top:1215.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Evocation Uncommon&lt;/b&gt;
+Unlocks casting Uncommon (Tier 2) Evocation spells.
+Cost: 2 points
+(starting node)"></div><div class="spot" style="left:1298.0px;top:1276.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Evocation Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1270.0px;top:1334.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Evocation Mastery&lt;/b&gt;
++10% Evocation Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1239.0px;top:1387.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Evocation Rare&lt;/b&gt;
+Unlocks casting Rare (Tier 3) Evocation spells.
+Cost: 3 points"></div><div class="spot" style="left:1216.0px;top:1450.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Evocation Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1188.0px;top:1508.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Evocation Mastery&lt;/b&gt;
++10% Evocation Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1155.0px;top:1561.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Evocation Epic&lt;/b&gt;
+Unlocks casting Epic (Tier 4) Evocation spells.
+Cost: 4 points"></div><div class="spot" style="left:1132.0px;top:1622.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Evocation Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1104.0px;top:1680.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Evocation Mastery&lt;/b&gt;
++10% Evocation Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1071.0px;top:1733.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Evocation Legendary&lt;/b&gt;
+Unlocks casting Legendary (Tier 5) Evocation spells.
+Cost: 5 points"></div><div class="spot" style="left:1048.0px;top:1796.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Evocation Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1022.0px;top:1854.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Evocation Mastery&lt;/b&gt;
++10% Evocation Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1261.0px;top:1517.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Blood Awakening&lt;/b&gt;
+Unlocks casting Common (Tier 1) Blood spells.
+Cost: 1 point"></div><div class="spot" style="left:1250.0px;top:1584.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Blood Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1236.0px;top:1648.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Blood Mastery&lt;/b&gt;
++10% Blood Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1215.0px;top:1705.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Blood Uncommon&lt;/b&gt;
+Unlocks casting Uncommon (Tier 2) Blood spells.
+Cost: 2 points"></div><div class="spot" style="left:1204.0px;top:1772.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Blood Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1190.0px;top:1834.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Blood Mastery&lt;/b&gt;
++10% Blood Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1169.0px;top:1891.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Blood Rare&lt;/b&gt;
+Unlocks casting Rare (Tier 3) Blood spells.
+Cost: 3 points"></div><div class="spot" style="left:1160.0px;top:1958.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Blood Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1144.0px;top:2020.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Blood Mastery&lt;/b&gt;
++10% Blood Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1125.0px;top:2077.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Blood Epic&lt;/b&gt;
+Unlocks casting Epic (Tier 4) Blood spells.
+Cost: 4 points"></div><div class="spot" style="left:1114.0px;top:2144.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Blood Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1098.0px;top:2206.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Blood Mastery&lt;/b&gt;
++10% Blood Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1079.0px;top:2263.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Blood Legendary&lt;/b&gt;
+Unlocks casting Legendary (Tier 5) Blood spells.
+Cost: 5 points"></div><div class="spot" style="left:1068.0px;top:2330.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Blood Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1054.0px;top:2394.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Blood Mastery&lt;/b&gt;
++10% Blood Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1253.0px;top:1127.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Ender Uncommon&lt;/b&gt;
+Unlocks casting Uncommon (Tier 2) Ender spells.
+Cost: 2 points
+(starting node)"></div><div class="spot" style="left:1194.0px;top:1146.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Ender Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1132.0px;top:1160.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Ender Mastery&lt;/b&gt;
++10% Ender Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1065.0px;top:1171.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Ender Rare&lt;/b&gt;
+Unlocks casting Rare (Tier 3) Ender spells.
+Cost: 3 points"></div><div class="spot" style="left:1008.0px;top:1190.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Ender Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:946.0px;top:1204.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Ender Mastery&lt;/b&gt;
++10% Ender Spell Power
+Cost: 1 point"></div><div class="spot" style="left:877.0px;top:1213.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Ender Epic&lt;/b&gt;
+Unlocks casting Epic (Tier 4) Ender spells.
+Cost: 4 points"></div><div class="spot" style="left:820.0px;top:1232.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Ender Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:758.0px;top:1246.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Ender Mastery&lt;/b&gt;
++10% Ender Spell Power
+Cost: 1 point"></div><div class="spot" style="left:691.0px;top:1255.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Ender Legendary&lt;/b&gt;
+Unlocks casting Legendary (Tier 5) Ender spells.
+Cost: 5 points"></div><div class="spot" style="left:634.0px;top:1274.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Ender Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:570.0px;top:1290.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Ender Mastery&lt;/b&gt;
++10% Ender Spell Power
+Cost: 1 point"></div><div class="spot" style="left:851.0px;top:1297.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Eldritch Awakening&lt;/b&gt;
+Unlocks casting Common (Tier 1) Eldritch spells.
+Cost: 1 point
+Requires: somakespells"></div><div class="spot" style="left:798.0px;top:1328.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Eldritch Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: somakespells"></div><div class="spot" style="left:740.0px;top:1356.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Eldritch Mastery&lt;/b&gt;
++10% Eldritch Spell Power
+Cost: 1 point
+Requires: somakespells"></div><div class="spot" style="left:677.0px;top:1377.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Eldritch Uncommon&lt;/b&gt;
+Unlocks casting Uncommon (Tier 2) Eldritch spells.
+Cost: 2 points
+Requires: somakespells"></div><div class="spot" style="left:624.0px;top:1410.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Eldritch Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: somakespells"></div><div class="spot" style="left:566.0px;top:1436.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Eldritch Mastery&lt;/b&gt;
++10% Eldritch Spell Power
+Cost: 1 point
+Requires: somakespells"></div><div class="spot" style="left:503.0px;top:1459.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Eldritch Rare&lt;/b&gt;
+Unlocks casting Rare (Tier 3) Eldritch spells.
+Cost: 3 points
+Requires: somakespells"></div><div class="spot" style="left:450.0px;top:1490.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Eldritch Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: somakespells"></div><div class="spot" style="left:392.0px;top:1518.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Eldritch Mastery&lt;/b&gt;
++10% Eldritch Spell Power
+Cost: 1 point
+Requires: somakespells"></div><div class="spot" style="left:329.0px;top:1539.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Eldritch Epic&lt;/b&gt;
+Unlocks casting Epic (Tier 4) Eldritch spells.
+Cost: 4 points
+Requires: somakespells"></div><div class="spot" style="left:276.0px;top:1572.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Eldritch Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: somakespells"></div><div class="spot" style="left:218.0px;top:1598.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Eldritch Mastery&lt;/b&gt;
++10% Eldritch Spell Power
+Cost: 1 point
+Requires: somakespells"></div><div class="spot" style="left:155.0px;top:1619.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Eldritch Legendary&lt;/b&gt;
+Unlocks casting Legendary (Tier 5) Eldritch spells.
+Cost: 5 points
+Requires: somakespells"></div><div class="spot" style="left:102.0px;top:1652.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Eldritch Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: somakespells"></div><div class="spot" style="left:44.0px;top:1678.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Eldritch Mastery&lt;/b&gt;
++10% Eldritch Spell Power
+Cost: 1 point
+Requires: somakespells"></div><div class="spot" style="left:1277.0px;top:1019.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Ice Uncommon&lt;/b&gt;
+Unlocks casting Uncommon (Tier 2) Ice spells.
+Cost: 2 points
+(starting node)"></div><div class="spot" style="left:1232.0px;top:984.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Ice Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1182.0px;top:944.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Ice Mastery&lt;/b&gt;
++10% Ice Spell Power
+Cost: 1 point"></div><div class="spot" style="left:1127.0px;top:899.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Ice Rare&lt;/b&gt;
+Unlocks casting Rare (Tier 3) Ice spells.
+Cost: 3 points"></div><div class="spot" style="left:1082.0px;top:864.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Ice Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:1032.0px;top:824.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Ice Mastery&lt;/b&gt;
++10% Ice Spell Power
+Cost: 1 point"></div><div class="spot" style="left:977.0px;top:779.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Ice Epic&lt;/b&gt;
+Unlocks casting Epic (Tier 4) Ice spells.
+Cost: 4 points"></div><div class="spot" style="left:932.0px;top:744.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Ice Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:882.0px;top:704.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Ice Mastery&lt;/b&gt;
++10% Ice Spell Power
+Cost: 1 point"></div><div class="spot" style="left:827.0px;top:661.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Ice Legendary&lt;/b&gt;
+Unlocks casting Legendary (Tier 5) Ice spells.
+Cost: 5 points"></div><div class="spot" style="left:782.0px;top:626.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Ice Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point"></div><div class="spot" style="left:732.0px;top:586.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Ice Mastery&lt;/b&gt;
++10% Ice Spell Power
+Cost: 1 point"></div><div class="spot" style="left:845.0px;top:771.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Abyssal Awakening&lt;/b&gt;
+Unlocks casting Common (Tier 1) Abyssal spells.
+Cost: 1 point
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:792.0px;top:748.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Abyssal Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:736.0px;top:718.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Abyssal Mastery&lt;/b&gt;
++10% Abyssal Spell Power
+Cost: 1 point
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:673.0px;top:685.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Abyssal Uncommon&lt;/b&gt;
+Unlocks casting Uncommon (Tier 2) Abyssal spells.
+Cost: 2 points
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:622.0px;top:662.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Abyssal Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:564.0px;top:634.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Abyssal Mastery&lt;/b&gt;
++10% Abyssal Spell Power
+Cost: 1 point
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:501.0px;top:599.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Abyssal Rare&lt;/b&gt;
+Unlocks casting Rare (Tier 3) Abyssal spells.
+Cost: 3 points
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:450.0px;top:576.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Abyssal Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:392.0px;top:548.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Abyssal Mastery&lt;/b&gt;
++10% Abyssal Spell Power
+Cost: 1 point
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:329.0px;top:513.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Abyssal Epic&lt;/b&gt;
+Unlocks casting Epic (Tier 4) Abyssal spells.
+Cost: 4 points
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:278.0px;top:490.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Abyssal Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:220.0px;top:462.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Abyssal Mastery&lt;/b&gt;
++10% Abyssal Spell Power
+Cost: 1 point
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:159.0px;top:427.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Abyssal Legendary&lt;/b&gt;
+Unlocks casting Legendary (Tier 5) Abyssal spells.
+Cost: 5 points
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:106.0px;top:404.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Abyssal Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:48.0px;top:376.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Abyssal Mastery&lt;/b&gt;
++10% Abyssal Spell Power
+Cost: 1 point
+Requires: cataclysm_spellbooks"></div><div class="spot" style="left:1191.0px;top:851.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Aqua Awakening&lt;/b&gt;
+Unlocks casting Common (Tier 1) Aqua spells.
+Cost: 1 point
+Requires: somakespells"></div><div class="spot" style="left:1154.0px;top:808.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Aqua Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: somakespells"></div><div class="spot" style="left:1114.0px;top:758.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Aqua Mastery&lt;/b&gt;
++10% Aqua Spell Power
+Cost: 1 point
+Requires: somakespells"></div><div class="spot" style="left:1069.0px;top:703.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Aqua Uncommon&lt;/b&gt;
+Unlocks casting Uncommon (Tier 2) Aqua spells.
+Cost: 2 points
+Requires: somakespells"></div><div class="spot" style="left:1032.0px;top:660.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Aqua Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: somakespells"></div><div class="spot" style="left:992.0px;top:610.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Aqua Mastery&lt;/b&gt;
++10% Aqua Spell Power
+Cost: 1 point
+Requires: somakespells"></div><div class="spot" style="left:947.0px;top:555.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Aqua Rare&lt;/b&gt;
+Unlocks casting Rare (Tier 3) Aqua spells.
+Cost: 3 points
+Requires: somakespells"></div><div class="spot" style="left:910.0px;top:510.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Aqua Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: somakespells"></div><div class="spot" style="left:870.0px;top:462.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Aqua Mastery&lt;/b&gt;
++10% Aqua Spell Power
+Cost: 1 point
+Requires: somakespells"></div><div class="spot" style="left:825.0px;top:407.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Aqua Epic&lt;/b&gt;
+Unlocks casting Epic (Tier 4) Aqua spells.
+Cost: 4 points
+Requires: somakespells"></div><div class="spot" style="left:788.0px;top:362.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Aqua Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: somakespells"></div><div class="spot" style="left:748.0px;top:314.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Aqua Mastery&lt;/b&gt;
++10% Aqua Spell Power
+Cost: 1 point
+Requires: somakespells"></div><div class="spot" style="left:703.0px;top:259.0px;width:62.0px;height:62.0px" data-tip="&lt;b&gt;Aqua Legendary&lt;/b&gt;
+Unlocks casting Legendary (Tier 5) Aqua spells.
+Cost: 5 points
+Requires: somakespells"></div><div class="spot" style="left:666.0px;top:214.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Aqua Attunement&lt;/b&gt;
++10 Max Mana
+Cost: 1 point
+Requires: somakespells"></div><div class="spot" style="left:626.0px;top:164.0px;width:52.0px;height:52.0px" data-tip="&lt;b&gt;Aqua Mastery&lt;/b&gt;
++10% Aqua Spell Power
+Cost: 1 point
+Requires: somakespells"></div></div></div>
+<div id="tip"></div><script>
+const tip = document.getElementById('tip');
+document.querySelectorAll('.spot').forEach(s => {
+  s.addEventListener('mousemove', e => {
+    tip.innerHTML = s.dataset.tip; tip.style.display = 'block';
+    const x = Math.min(e.clientX + 14, window.innerWidth - tip.offsetWidth - 8);
+    const y = Math.min(e.clientY + 14, window.innerHeight - tip.offsetHeight - 8);
+    tip.style.left = x + 'px'; tip.style.top = y + 'px';
+  });
+  s.addEventListener('mouseleave', () => tip.style.display = 'none');
+});
+let zoom = 1;
+const stage = document.querySelector('.stage');
+function setZoom(z) { zoom = Math.max(0.25, Math.min(3, z)); stage.style.transform = `scale(${zoom})`;
+  stage.parentElement.style.setProperty('--z', zoom); document.getElementById('z').textContent = Math.round(zoom * 100) + '%'; }
+document.querySelectorAll('[data-zoom]').forEach(b => b.onclick = () => setZoom(b.dataset.zoom === 'fit'
+  ? stage.parentElement.clientWidth / stage.offsetWidth : zoom * parseFloat(b.dataset.zoom)));
+</script></main></body></html>
