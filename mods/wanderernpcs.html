@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cloth Config v15 API - Chaotica 4.0</title><style>
+<title>Wandering NPCs - Chaotica 4.0</title><style>
 :root { --bg: #17151d; --panel: #221f2b; --text: #e8e4f0; --muted: #a59fb5; --accent: #d98cff; --border: #3a3448; }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, Segoe UI, sans-serif; }
@@ -76,5 +76,54 @@ h1 { font-size: 22px; margin: 4px 0 4px; } .sub { color: var(--muted); margin: 0
 #picker { position: absolute; z-index: 20; background: #0e0c12; border: 1px solid var(--accent); border-radius: 6px; padding: 4px; min-width: 150px; }
 #picker div { padding: 3px 8px; border-radius: 4px; cursor: pointer; font-size: 13px; } #picker div:hover { background: #2c2738; }
 </style>
-<div class="modhead"><img src="cloth_config_logo.png" alt=""><div><h1>Cloth Config v15 API</h1><div class="meta"><code>cloth_config</code> · 15.0.140 · shedaniel · cloth-config-15.0.140-neoforge.jar</div><span class="tag" style="--h:186">Library &amp; Utils</span></div></div>
-<p class="desc">An API for config screens.</p><div class="deps"><div><b>Required by:</b> <a href="adorable_eggs.html">AdorableEggs</a>, <a href="better_beacons.html">Better Beacons</a>, <a href="better_mob_combat_reimagined.html">Better Mob Combat: Reimagined</a>, <a href="bettercombat.html">Better Combat</a>, <a href="betterf3.html">BetterF3</a>, <a href="cameraoverhaul.html">CameraOverhaul</a>, <a href="spider_overhaul.html">Spider Overhaul</a></div><div><b>Optional for:</b> <a href="icys_better_horses.html">Icy&#x27;s Better Horses</a>, <a href="shieldexp.html">Shield Expansion</a></div></div></main></body></html>
+<div class="modhead"><div><h1>Wandering NPCs</h1><div class="meta"><code>wanderernpcs</code> · 0.1-BETA · Chaotistin · wanderernpcs-0.1-BETA.jar</div></div></div>
+<p class="desc">Named travelers, merchants, mercenaries and bandits walk the overworld, remember what you did, and talk about it.</p><div class="deps"><div><b>Requires:</b> <a href="kotlinforforge.html">Kotlin For Forge</a></div></div><div class="tabs"><button data-tab="items">Items &amp; blocks (5)</button><button data-tab="mobs">Mobs (0)</button>
+<input id="q" placeholder="Search name or id"></div>
+<div id="detail"></div><div class="grid" id="grid"></div>
+<script>const DATA = {"items":[{"id":"wanderernpcs:bandit_compass","name":"Bandit Compass","icon":0,"tags":[],"found":[],"recipes":[{"t":"Crafting (shaped)","k":"shaped","id":"wanderernpcs:bandit_compass","in":[{"i":1,"n":"Flint"},{"i":1,"n":"Flint"},{"i":1,"n":"Flint"},{"i":1,"n":"Flint"},{"i":2,"n":"Compass"},{"i":1,"n":"Flint"},{"i":1,"n":"Flint"},{"i":1,"n":"Flint"},{"i":1,"n":"Flint"}],"out":[{"i":0,"n":"Bandit Compass"}],"g":[[{"i":1,"n":"Flint"},{"i":1,"n":"Flint"},{"i":1,"n":"Flint"}],[{"i":1,"n":"Flint"},{"i":2,"n":"Compass"},{"i":1,"n":"Flint"}],[{"i":1,"n":"Flint"},{"i":1,"n":"Flint"},{"i":1,"n":"Flint"}]]}],"used":[],"usedMore":0},{"id":"wanderernpcs:friendship_compass","name":"Friendship Compass","icon":3,"tags":[],"found":[],"recipes":[{"t":"Crafting (shaped)","k":"shaped","id":"wanderernpcs:friendship_compass","in":[{"i":4,"n":"Gold Ingot"},{"i":4,"n":"Gold Ingot"},{"i":4,"n":"Gold Ingot"},{"i":4,"n":"Gold Ingot"},{"i":5,"n":"Wanderer Compass"},{"i":4,"n":"Gold Ingot"},{"i":4,"n":"Gold Ingot"},{"i":4,"n":"Gold Ingot"},{"i":4,"n":"Gold Ingot"}],"out":[{"i":3,"n":"Friendship Compass"}],"g":[[{"i":4,"n":"Gold Ingot"},{"i":4,"n":"Gold Ingot"},{"i":4,"n":"Gold Ingot"}],[{"i":4,"n":"Gold Ingot"},{"i":5,"n":"Wanderer Compass"},{"i":4,"n":"Gold Ingot"}],[{"i":4,"n":"Gold Ingot"},{"i":4,"n":"Gold Ingot"},{"i":4,"n":"Gold Ingot"}]]}],"used":[],"usedMore":0},{"id":"wanderernpcs:tavern","name":"Tavern","icon":6,"tags":[],"found":[],"recipes":[{"t":"Crafting (shaped)","k":"shaped","id":"wanderernpcs:tavern","in":[{"i":7,"n":"Bell"},{"i":8,"n":"#minecraft:planks (e.g. Oak Planks)","tag":1},{"i":9,"n":"Barrel"},{"i":8,"n":"#minecraft:planks (e.g. Oak Planks)","tag":1},{"i":10,"n":"Campfire"}],"out":[{"i":6,"n":"Tavern"}],"g":[[null,{"i":7,"n":"Bell"},null],[{"i":8,"n":"#minecraft:planks (e.g. Oak Planks)","tag":1},{"i":9,"n":"Barrel"},{"i":8,"n":"#minecraft:planks (e.g. Oak Planks)","tag":1}],[null,{"i":10,"n":"Campfire"},null]]}],"used":[],"usedMore":0},{"id":"wanderernpcs:wanderer_compass","name":"Wanderer Compass","icon":5,"tags":[],"found":[],"recipes":[{"t":"Crafting (shaped)","k":"shaped","id":"wanderernpcs:wanderer_compass","in":[{"i":11,"n":"Emerald"},{"i":11,"n":"Emerald"},{"i":11,"n":"Emerald"},{"i":11,"n":"Emerald"},{"i":2,"n":"Compass"},{"i":11,"n":"Emerald"},{"i":11,"n":"Emerald"},{"i":11,"n":"Emerald"},{"i":11,"n":"Emerald"}],"out":[{"i":5,"n":"Wanderer Compass"}],"g":[[{"i":11,"n":"Emerald"},{"i":11,"n":"Emerald"},{"i":11,"n":"Emerald"}],[{"i":11,"n":"Emerald"},{"i":2,"n":"Compass"},{"i":11,"n":"Emerald"}],[{"i":11,"n":"Emerald"},{"i":11,"n":"Emerald"},{"i":11,"n":"Emerald"}]]}],"used":[{"i":3,"n":"Friendship Compass"}],"usedMore":0},{"id":"wanderernpcs:wanderers_horn","name":"Wanderer&#x27;s Horn","icon":12,"tags":[],"found":[],"recipes":[{"t":"Crafting (shaped)","k":"shaped","id":"wanderernpcs:wanderers_horn","in":[{"i":11,"n":"Emerald"},{"i":11,"n":"Emerald"},{"i":11,"n":"Emerald"},{"i":11,"n":"Emerald"},{"i":13,"n":"Goat Horn"},{"i":11,"n":"Emerald"},{"i":11,"n":"Emerald"},{"i":11,"n":"Emerald"},{"i":11,"n":"Emerald"}],"out":[{"i":12,"n":"Wanderer&#x27;s Horn"}],"g":[[{"i":11,"n":"Emerald"},{"i":11,"n":"Emerald"},{"i":11,"n":"Emerald"}],[{"i":11,"n":"Emerald"},{"i":13,"n":"Goat Horn"},{"i":11,"n":"Emerald"}],[{"i":11,"n":"Emerald"},{"i":11,"n":"Emerald"},{"i":11,"n":"Emerald"}]]}],"used":[],"usedMore":0}],"mobs":[],"atlas":"wanderernpcs.png","cols":40};
+const D = DATA; let tab = D.items.length ? 'items' : 'mobs';
+const grid = document.getElementById('grid'), detail = document.getElementById('detail'), q = document.getElementById('q');
+const ico = i => `<div class="ico" style="background:url(${D.atlas}) -${(i % D.cols) * 32}px -${Math.floor(i / D.cols) * 32}px"></div>`;
+const small = i => `<div class="ico" style="background:url(${D.atlas}) -${(i % D.cols) * 24}px -${Math.floor(i / D.cols) * 24}px;background-size:${D.cols * 24}px auto"></div>`;
+function render() {
+  document.querySelectorAll('[data-tab]').forEach(b => b.classList.toggle('on', b.dataset.tab === tab));
+  const term = q.value.toLowerCase();
+  grid.innerHTML = D[tab].map((e, n) => (!term || (e.name + ' ' + e.id).toLowerCase().includes(term))
+    ? `<div class="entry" data-n="${n}" title="${e.id}">${ico(e.icon)}<span>${e.name}</span></div>` : '').join('');
+}
+function cell(c) {
+  if (!c) return '<div class="cell"></div>';
+  const badge = c.c ? `<i>${c.c}</i>` : c.p ? `<i>${c.p}%</i>` : '';
+  return `<div class="cell${c.tag ? ' tagged' : ''}" title="${c.n}">${small(c.i)}${badge}</div>`;
+}
+function recipeHtml(r) {
+  let inputs;
+  if (r.k === 'shaped') {
+    const rows = r.g.map(row => [...row, null, null, null].slice(0, 3));
+    while (rows.length < 3) rows.push([null, null, null]);
+    inputs = `<div class="cgrid">${rows.flat().map(cell).join('')}</div>`;
+  } else if (r.k === 'shapeless') {
+    const cells = [...r.in]; while (cells.length < 9 && cells.length % 3) cells.push(null);
+    inputs = `<div class="cgrid">${cells.map(cell).join('')}</div>`;
+  } else {
+    inputs = `<div class="crow">${r.in.map(cell).join('')}</div>`;
+  }
+  return `<div class="recipe" title="${r.id}"><div class="rtype">${r.t}</div><div class="rbody">${inputs}
+    <span class="arrow">&rarr;</span><div class="crow">${r.out.map(cell).join('')}</div></div></div>`;
+}
+function show(e) {
+  let h = `<h3>${e.name}</h3><code>${e.id}</code>`;
+  if (e.tags && e.tags.length) h += `<div class="chips">${e.tags.map(t => `<span>${t}</span>`).join('')}</div>`;
+  if (e.found && e.found.length) h += `<div><b>Found in</b><ul>${e.found.map(f => `<li>${f}</li>`).join('')}</ul></div>`;
+  if (e.recipes && e.recipes.length) h += `<div><b>Recipes</b><div class="recipes">${e.recipes.map(recipeHtml).join('')}</div></div>`;
+  else if (e.recipes) h += '<div class="meta">No recipe in the mod files (may still exist via KubeJS).</div>';
+  if (e.used && e.used.length) h += `<div><b>Used in</b><br>${e.used.map(u => `<span class="drop">${small(u.i)}${u.n}</span>`).join('')}${e.usedMore ? `<span class="meta">+${e.usedMore} more</span>` : ''}</div>`;
+  if (e.drops) h += e.drops.length ? `<div><b>Drops</b><br>${e.drops.map(d => `<span class="drop">${small(d.icon)}${d.name}</span>`).join('')}</div>` : '<div class="meta">No loot table found.</div>';
+  if (e.egg === false) h += '<div class="meta">No spawn egg (fallback icon).</div>';
+  detail.innerHTML = h; detail.style.display = 'block';
+}
+grid.addEventListener('click', ev => { const el = ev.target.closest('.entry'); if (!el) return;
+  document.querySelectorAll('.entry.sel').forEach(x => x.classList.remove('sel')); el.classList.add('sel'); show(D[tab][el.dataset.n]); });
+document.querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { tab = b.dataset.tab; detail.style.display = 'none'; render(); });
+q.oninput = render; render();
+</script></main></body></html>
