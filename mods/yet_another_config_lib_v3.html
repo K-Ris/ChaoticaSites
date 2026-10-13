@@ -23,7 +23,7 @@ h1 { font-size: 22px; margin: 4px 0 4px; } .sub { color: var(--muted); margin: 0
 .controls { margin: 0 0 10px; display: flex; gap: 8px; align-items: center; color: var(--muted); font-size: 13px; }
 .controls button { background: var(--panel); color: var(--text); border: 1px solid var(--border); border-radius: 5px; padding: 3px 10px; cursor: pointer; }
 </style></head>
-<body><header><span class="brand">Chaotica 4.0</span><a href="../index.html">Overview</a><a href="../arcana/index.html">Arcana tree</a><a href="../quests/index.html">Quests</a><a href="../mods/index.html">Mods</a></header><main><style>
+<body><header><span class="brand">Chaotica 4.0</span><a href="../index.html">Overview</a><a href="../arcana/index.html">Arcana tree</a><a href="../quests/index.html">Quests</a><a href="../mods/index.html">Mods</a><a href="../gear/index.html">Gear</a><a href="../mobs/index.html">Mobs</a></header><main><style>
 .modhead { display: flex; gap: 16px; align-items: center; margin-bottom: 8px; }
 .modhead img { width: 72px; height: 72px; object-fit: contain; image-rendering: pixelated; border-radius: 8px; background: #0e0c12; }
 .meta { color: var(--muted); font-size: 13px; }
@@ -37,6 +37,7 @@ h1 { font-size: 22px; margin: 4px 0 4px; } .sub { color: var(--muted); margin: 0
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 6px; }
 .entry { display: flex; gap: 8px; align-items: center; background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 5px 8px; cursor: pointer; min-width: 0; }
 .entry:hover, .entry.sel { border-color: var(--accent); }
+.entry.removed { opacity: .45; } .entry.removed span { text-decoration: line-through; }
 .entry span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; }
 .ico { width: 32px; height: 32px; flex: none; image-rendering: pixelated; }
 #detail { position: sticky; top: 0; background: var(--panel); border: 1px solid var(--accent); border-radius: 8px; padding: 12px; margin-bottom: 10px; display: none; }
@@ -56,6 +57,8 @@ h1 { font-size: 22px; margin: 4px 0 4px; } .sub { color: var(--muted); margin: 0
 .cell i { position: absolute; right: 1px; bottom: -1px; font-style: normal; font-size: 10px; font-weight: 600; color: #fff;
           text-shadow: 1px 1px 0 #000; }
 .arrow { color: var(--muted); font-size: 18px; }
+.stats { font-size: 13px; margin: 6px 0; border-collapse: collapse; } .stats td { padding: 1px 12px 1px 0; }
+.stats td:first-child { color: var(--muted); }
 .deps { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; margin: 6px 0 4px; font-size: 13px; max-width: 900px; }
 .deps a { color: var(--accent); } .missing { color: #ff7a7a; }
 .badge { display: inline-block; margin-top: 6px; font-style: normal; font-size: 11px; padding: 1px 6px; border-radius: 4px; background: #2c2738; color: var(--muted); }
@@ -77,4 +80,4 @@ h1 { font-size: 22px; margin: 4px 0 4px; } .sub { color: var(--muted); margin: 0
 #picker div { padding: 3px 8px; border-radius: 4px; cursor: pointer; font-size: 13px; } #picker div:hover { background: #2c2738; }
 </style>
 <div class="modhead"><img src="yet_another_config_lib_v3_logo.png" alt=""><div><h1>YetAnotherConfigLib</h1><div class="meta"><code>yet_another_config_lib_v3</code> · 3.6.6+1.21.1-neoforge · isXander · yet-another-config-lib-3.6.6+1.21.1-neoforge.jar</div><span class="tag" style="--h:186">Library &amp; Utils</span></div></div>
-<p class="desc">YetAnotherConfigLib (yacl) is just that. A builder-based configuration library for Minecraft.</p><div class="deps"><div><b>Required by:</b> <a href="bridgingmod.html">Bridging Mod</a>, <a href="fowlplay.html">Fowl Play</a>, <a href="structurify.html">Structurify</a></div><div><b>Optional for:</b> <a href="takesapillage.html">It Takes a Pillage Continuation</a></div><div><b>Bundled in:</b> fragmentum-5.0.0+1.21.1-neoforge.jar</div></div></main></body></html>
+<p class="desc">YetAnotherConfigLib (yacl) is just that. A builder-based configuration library for Minecraft.</p><div class="deps"><div><b>Required by:</b> <a href="bridgingmod.html">Bridging Mod</a>, <a href="fowlplay.html">Fowl Play</a>, <a href="immersive_horse_riding.html">Immersive Horse Riding</a>, <a href="structurify.html">Structurify</a></div><div><b>Optional for:</b> <a href="takesapillage.html">It Takes a Pillage Continuation</a></div><div><b>Bundled in:</b> fragmentum-5.0.0+1.21.1-neoforge.jar</div></div></main></body></html>
